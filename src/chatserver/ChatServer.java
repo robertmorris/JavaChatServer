@@ -130,12 +130,15 @@ public class ChatServer {
                 // Accept messages from this client and broadcast them.
                 // Ignore other clients that cannot be broadcasted to.
                 while (true) {
-                    String input = in.readLine();
-                    if (input == null) {
-                        return;
-                    }
+                    //String input = in.readLine();
+                    //if (input == null) {
+                    //    return;
+                    //}
                     for (PrintWriter writer : writers) {
-                        writer.println("MESSAGE " + name + ": " + input);
+                        for(String n : names){
+                            writer.println("MESSAGE " + n );
+                        }
+                        
                     }
                 }
             } catch (IOException e) {
